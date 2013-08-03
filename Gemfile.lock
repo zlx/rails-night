@@ -36,7 +36,6 @@ GEM
     arel (4.0.0)
     atomic (1.1.12)
     bcrypt-ruby (3.0.1)
-    bootstrap-datetimepicker-rails (0.0.11)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.1.4)
@@ -58,6 +57,9 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -123,11 +125,11 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
-  bootstrap-datetimepicker-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   pg
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

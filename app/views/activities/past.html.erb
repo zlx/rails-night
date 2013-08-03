@@ -1,15 +1,13 @@
-<h1>最新活动</h1>
+<h1>Listing activities</h1>
 
-<hr>
-
-<table class='table table-hover'>
+<table>
   <thead>
     <tr>
-      <th>主题</th>
-      <th>主要内容</th>
-      <th>主讲人</th>
-      <th>状态</th>
-      <th>开始时间</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Start at</th>
+      <th>Summary</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,11 +17,12 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= link_to activity.title, activity %></td>
+        <td><%= activity.title %></td>
         <td><%= activity.description %></td>
-        <td><%= activity.author_nickname %></td>
-        <td><span class='label label-info'><%= activity.human_status %></span></td>
-        <td><%= activity.start_at.to_s(:db) %></td>
+        <td><%= activity.author %></td>
+        <td><%= activity.start_at %></td>
+        <td><%= activity.summary %></td>
+        <td><%= link_to 'Show', activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

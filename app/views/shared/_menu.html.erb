@@ -8,13 +8,11 @@
       </button>
       <%= link_to "Rails-Night", root_path, class: 'brand' %>
       <div class="nav-collapse collapse">
-        <p class="navbar-text pull-right">
-          <%= render 'shared/user_nav' %>
-        </p>
+        <%= render 'shared/user_nav' %>
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><%= link_to "最新活动", activities_path %></li>
+          <li><%= link_to "往期活动", past_activities_path %></li>
+          <li><%= link_to "咨询建议", '#' %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

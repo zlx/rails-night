@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <div class="activity span12">
+    <div class="activity-title span8">
+      <h2><%= @activity.title %></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @activity.title %>
-</p>
+      <hr>
+    </div>
+    <div class="activity-body">
+      <div class="span8 activity-main">
+        <div class="description">
+          <h4>主讲人: <%= @activity.author_nickname || "暂缺"%></h4>
+          <%= @activity.description.html_safe %>
+        </div>
+      </div>
+      <div class="sider-right span4">
+        <div class="activity-info well">
+          <h5>开始时间: <span class="alert-success"><%= @activity.start_at.to_s(:db) %></span></h5>
+          <h5>当前状态: <span class="alert-success"><%= @activity.human_status %></span></h5>
+          <%- if current_user && @activity.has_joined?(current_user) %>
+            <%= link_to "已经报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
+        <%- else %>
+            <%= link_to "报名", join_activity_path(@activity), method: :post, class: 'btn btn-success btn-large btn-block' %>
+        <% end -%>
+        </div>
+        <div class="activity-participants well center clearfix">
+          <h5>已报名会员</h5>
 
-<p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
+          <hr>
 
-<p>
-  <strong>Author:</strong>
-  <%= @activity.author %>
-</p>
-
-<p>
-  <strong>Start at:</strong>
-  <%= @activity.start_at %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @activity.summary %>
-</p>
-
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+          <%- @activity.users.each do |user| %>
+            <%= link_to image_tag(user.avatar_url), "http://colla.lanshizi.com/" %>
+        <% end -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

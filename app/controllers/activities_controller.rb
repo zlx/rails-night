@@ -1,7 +1,12 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy, :join]
+  before_action :require_login, only: [:join]
 
   def index
+    @activities = Activity.all
+  end
+
+  def past
     @activities = Activity.all
   end
 
@@ -49,12 +54,19 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def join
+    @activity.users << current_user
+    @activity.save
+    redirect_to @activity, notice: "欢迎参加活动"
+  end
+
   private
     def set_activity
       @activity = Activity.find(params[:id])
     end
 
     def activity_params
-      params.require(:activity).permit(:title, :description, :author, :start_at, :summary)
+      params.require(:activity).permit(:title, :description, :author_id, 
+                                       :start_at, :status, :summary)
     end
 end

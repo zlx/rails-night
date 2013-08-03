@@ -1,5 +1,12 @@
 RailsNight::Application.routes.draw do
-  resources :activities
+  resources :activities do
+    collection do
+      get :past
+    end
+    member do
+      post :join
+    end
+  end
 
   get 'users/edit'
   resources :users, only: [:show, :update]
