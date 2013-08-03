@@ -1,0 +1,8 @@
+<%= simple_form_for @user, url: sessions_path do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+
+  <div class='form-actions'>
+    <%= f.button :submit %>
+  </div>
+<% end %>
