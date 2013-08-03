@@ -41,6 +41,7 @@ group :production do
 end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bootstrap-datetimepicker-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

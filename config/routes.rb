@@ -1,4 +1,6 @@
 RailsNight::Application.routes.draw do
+  resources :activities
+
   get 'users/edit'
   resources :users, only: [:show, :update]
   get "home/index"

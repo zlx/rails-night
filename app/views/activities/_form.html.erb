@@ -1,0 +1,14 @@
+<%= simple_form_for @activity, html: {class: 'form-horizontal'} do |f| %>
+  <%= f.error_notification %>
+
+<div class="form-inputs">
+  <%= f.input :title %>
+  <%= f.input :description, input_html: {class: 'span6'} %>
+  <%= f.input :author, collection: User.all.map{|u| [u.nickname, u.id]} %>
+  <%= f.input :start_at, as: :string %>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>
