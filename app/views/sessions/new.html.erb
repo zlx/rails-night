@@ -1,8 +1,8 @@
-<%= simple_form_for @user, url: sessions_path do |f| %>
+<%= simple_form_for @user, url: sessions_path, html: { class: 'form-horizontal' } do |f| %>
   <%= f.input :email %>
   <%= f.input :password %>
 
   <div class='form-actions'>
-    <%= f.button :submit %>
+    <%= f.submit '登录', class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,0 +1,16 @@
+<%= simple_form_for @user, html:{ class: 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :email %>
+  <%= f.input :nickname %>
+  <%= f.input :avatar_url %>
+
+
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :current_password, required: true, hint: '你必须输入原密码来确认修改' %>
+
+  <div class='form-actions'>
+    <%= f.button :submit %>
+  </div>
+<% end %>

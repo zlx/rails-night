@@ -9,7 +9,7 @@
       <%= link_to "Rails-Night", root_path, class: 'brand' %>
       <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
-          <%= link_to "登录", login_in_path, class: 'navbar-link' %>
+          <%= render 'shared/user_nav' %>
         </p>
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>

@@ -9,12 +9,18 @@ class SessionsController < ApplicationController
       @user = User.new(user_params.merge(password_confirmation: user_params[:password], 
                                          nickname: user_params[:email][/^(.*)@/, 1]))
       unless @user.save
-        return render action: :new, alert: @user.errors.full_messages
+        return render action: :new
       end
     elsif !@user.authenticate(user_params[:password])
-      return render action: :new, alter: "密码错误"
+      return redirect_to login_in_path, alert: "密码错误"
     end
+    self.current_user = @user
     redirect_to root_path, notice: '欢迎来到 Rails-Night 的家园'
+  end
+
+  def destroy
+    self.current_user = nil
+    redirect_to root_path
   end
 
 
