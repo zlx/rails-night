@@ -5,4 +5,8 @@ zh_CN:
     destroy: '删除'
     new: '创建一个新的'
     markdown: "你可以使用 <a href='http://wowubuntu.com/markdown/index.html'>markdown</a> 语法编辑"
+    avatar_url: "请到 <a href='http://cn.gravatar.com/'>gravatar.com</a> 保存你的头像, 并填写下你的邮箱"
+    easyread: '简阅'
+    footer:
+      declaration: '专属于简阅技术宅的盛会'
 

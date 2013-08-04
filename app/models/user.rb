@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :current_password
 
   def avatar_url
-    @avatar_url ||= "http://gravatar.com/avatar/#{Digest::MD5::hexdigest(email).downcase}.png?s=100"
+    avatar_email = self[:avatar_url].blank? ? email : self[:avatar_url]
+    @avatar_url ||= "http://gravatar.com/avatar/#{Digest::MD5::hexdigest(avatar_email).downcase}.png?s=100"
   end
 end
