@@ -19,3 +19,11 @@ body {
   padding-top: 60px;
   position: relative;
 }
+
+.main {
+  min-height: 500px;
+}
+
+.participant-box {
+  margin-bottom: 5px;
+}

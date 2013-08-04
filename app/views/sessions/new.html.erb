@@ -1,5 +1,9 @@
+<h2><%= link_to '诺曼底登陆', 'http://baike.baidu.com/view/26467.htm'%></h2>
+
+<hr/>
+
 <%= simple_form_for @user, url: sessions_path, html: { class: 'form-horizontal' } do |f| %>
-  <%= f.input :email %>
+  <%= f.input :email, hint: '仅接受 @easyread.ly 邮箱登录' %>
   <%= f.input :password %>
 
   <div class='form-actions'>

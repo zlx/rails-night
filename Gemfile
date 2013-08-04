@@ -47,6 +47,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-ui-rails'
 gem 'draper'
 gem 'redcarpet'
+gem 'cancan'
+gem 'settingslogic'
+gem 'delayed_job_active_record'
+gem 'whenever', :require => false
 
 # Use unicorn as the app server
 # gem 'unicorn'

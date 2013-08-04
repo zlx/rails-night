@@ -14,21 +14,25 @@
   </thead>
 
   <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
-        <td><%= link_to activity.title, activity %></td>
-        <td><%= activity.author_name %></td>
-        <td><span class='label label-info'><%= activity.human_status %></span></td>
-        <td>
-          <%= link_to t('common.edit'), edit_activity_path(activity) %>
-          <%= link_to t('common.destroy'), activity, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-      </tr>
-    <% end %>
+  <% @activities.each do |activity| %>
+    <tr>
+    <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
+    <td><%= link_to activity.title, activity %></td>
+    <td><%= activity.author_name %></td>
+    <td><span class='label label-info'><%= activity.human_status %></span></td>
+    <td>
+      <%- if can? :manage, activity %>
+        <%= link_to t('common.edit'), edit_activity_path(activity) %>
+      <%= link_to t('common.destroy'), activity, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end -%>
+    </td>
+  </tr>
+<% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to t('common.new'), new_activity_path, class: 'btn btn-success' %>
+<%- if can? :manage, Activity %>
+  <%= link_to t('common.new'), new_activity_path, class: 'btn btn-success' %>
+<% end -%>

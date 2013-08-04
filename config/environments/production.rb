@@ -77,4 +77,13 @@ RailsNight::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.exmail.qq.com",
+    :port                 => 25,
+    :user_name            => 'rails-night@zlxstar.me',
+    :password             => 'BQ7MO7uhLiG21',
+    :authentication       => :login,
+    :enable_starttls_auto => false
+  }
 end

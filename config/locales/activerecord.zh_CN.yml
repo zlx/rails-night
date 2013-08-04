@@ -12,3 +12,10 @@ zh_CN:
         status: '状态'
         start_at: '活动时间'
         summary: '总结'
+      user:
+        nickname: '昵称'
+        email: '邮箱'
+        avatar_url: '靓照'
+        password: '密码'
+        password_confirmation: '重复密码'
+        current_password: '当前密码'

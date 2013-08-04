@@ -1,0 +1,28 @@
+我亲爱的朋友, 您好！
+
+<p>本次的 Rails-Night 即将在 <%= l @activity.start_at, format: :short %> 开始!</p>
+
+<table>
+  <tr><th>主题: </th><td><%= @activity.title %></td><tr>
+  <tr><th>主讲人: </th><td><%= @activity.author_name %></td></tr>
+  <tr><th>活动简介：</th>
+      <td>
+        <%= markdown @activity.description %>
+      </td>
+  </tr>
+</table>
+
+<br/>
+
+<p>本次活动共有 <%= @activity.users.count %> 人次报名。</p>
+
+分别是: 
+<%= @activity.users.map(&:nickname).join("<br/>").html_safe %>
+
+<br/>
+<p>希望您能在这里度过一段愉快的时光!</p>
+
+<hr/>
+<p>感谢有你,</p>
+
+<p>Rails-Night 活动组</p>
