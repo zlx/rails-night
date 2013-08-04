@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id]).decorate
+    @activity_comment = ActivityComment.new(activity_id: @activity.id)
   end
 
   def new

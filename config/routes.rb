@@ -1,4 +1,6 @@
 RailsNight::Application.routes.draw do
+  resources :activity_comments, only: [:create]
+
   resources :activities do
     collection do
       get :past

@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-#source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 ruby '2.0.0'
 gem 'rails', '4.0.0'
@@ -52,6 +52,7 @@ gem 'cancan'
 gem 'settingslogic'
 gem 'delayed_job_active_record'
 gem 'whenever', :require => false
+gem 'rails-timeago'
 
 # Use unicorn as the app server
 # gem 'unicorn'

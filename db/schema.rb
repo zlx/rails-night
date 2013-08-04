@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804074611) do
+ActiveRecord::Schema.define(version: 20130804132834) do
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20130804074611) do
 
   add_index "activities_users", ["activity_id"], name: "index_activities_users_on_activity_id"
   add_index "activities_users", ["user_id"], name: "index_activities_users_on_user_id"
+
+  create_table "activity_comments", force: true do |t|
+    t.integer  "author_id"
+    t.text     "subject"
+    t.integer  "reply_to_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
