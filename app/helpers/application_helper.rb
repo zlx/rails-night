@@ -19,4 +19,8 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  def h model, name
+    model.to_s.camelize.constantize.human_attribute_name(name)
+  end
 end

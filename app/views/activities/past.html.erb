@@ -1,15 +1,15 @@
-<h1>Listing activities</h1>
+<h2>往期活动</h2>
 
-<table>
+<hr/>
+
+<table class='table table-hover'>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th>Start at</th>
-      <th>Summary</th>
-      <th></th>
-      <th></th>
+      <th><%= h :activity, :title %></th>
+      <th><%= h :activity, :description %></th>
+      <th><%= h :activity, :author_id %></th>
+      <th><%= h :activity, :status %></th>
+      <th><%= h :activity, :start_at %></th>
       <th></th>
     </tr>
   </thead>
@@ -17,19 +17,16 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.title %></td>
+        <td><%= link_to activity.title, activity %></td>
         <td><%= activity.description %></td>
-        <td><%= activity.author %></td>
-        <td><%= activity.start_at %></td>
-        <td><%= activity.summary %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= activity.author_name %></td>
+        <td><span class='label label-info'><%= activity.human_status %></span></td>
+        <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
+        <td>
+          <%= link_to t('common.edit'), edit_activity_path(activity) %>
+          <%= link_to t('common.destroy'), activity, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Activity', new_activity_path %>

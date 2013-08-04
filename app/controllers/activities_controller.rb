@@ -3,14 +3,15 @@ class ActivitiesController < ApplicationController
   before_action :require_login, only: [:join]
 
   def index
-    @activities = Activity.all
+    @activities = Activity.uncompleted.order(status: :desc).decorate
   end
 
   def past
-    @activities = Activity.all
+    @activities = Activity.completed.decorate
   end
 
   def show
+    @activity = Activity.find(params[:id]).decorate
   end
 
   def new
