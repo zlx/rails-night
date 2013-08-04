@@ -1,0 +1,20 @@
+我亲爱的朋友, 您好！
+
+本次的 Rails-Night 即将在 <%= l @activity.start_at, format: :short %> 开始!
+
+主题: <%= @activity.title %>
+主讲人: <%= @activity.author_name %>
+活动简介：
+
+<%= @activity.description %>
+
+本次活动共有 <%= @activity.users.count %> 人次报名。
+
+分别是: 
+<%= @activity.users.map(&:nickname).join(", ") %>
+
+希望您能在这里度过一段愉快的时光!
+
+感谢有你,
+
+Rails-Night 活动组

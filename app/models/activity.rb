@@ -3,7 +3,7 @@ class Activity < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
 
   validates :title, presence: true
-  validates :start_at, future_time: true
+  validates :start_at, presence: true, future_time: true
 
   scope :completed, -> { where(status: 2) }
   scope :uncompleted, -> { where("status != ?", 2) }

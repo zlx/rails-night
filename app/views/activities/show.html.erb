@@ -14,8 +14,8 @@
         </div>
         <%- if @activity.completed? %>
           <div class='summary'>
-            <h4><%= h :activity, :summary %></h4>
-            <div class='well'><%= markdown @activity.summary %></div>
+          <h4><%= h :activity, :summary %></h4>
+          <div class='well'><%= markdown @activity.summary %></div>
         </div>
       <% end -%>
       </div>
@@ -32,7 +32,7 @@
         <% end -%>
         </div>
         <%- if can? :manage, @activity %>
-        <div class="activity-manage well center clearfix">
+          <div class="activity-manage well center clearfix">
           <%= link_to t('common.edit'), [:edit, @activity], class: "btn btn-success btn-large btn-block" %>
           <%= link_to t('common.destroy'), @activity, method: :delete, class: "btn btn-danger btn-large btn-block" %>
         </div>
@@ -43,7 +43,9 @@
           <hr>
 
           <%- @activity.users.each do |user| %>
+            <div class='participant-box span3'>
             <%= link_to image_tag(user.avatar_url), "http://colla.lanshizi.com/" %>
+          </div>
         <% end -%>
         </div>
       </div>

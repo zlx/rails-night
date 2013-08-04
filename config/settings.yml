@@ -1,6 +1,7 @@
 defaults: &defaults
   admin_emails:
     - "lianxin.zhu@easyread.ly"
+  deliver_mail: "lianxin.zhu@easyread.ly"
 
 development:
   <<: *defaults

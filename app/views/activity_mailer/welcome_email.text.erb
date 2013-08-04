@@ -1,0 +1,19 @@
+亲爱的<%= @user.nickname %>, 您好！
+
+欢迎参加 Rails-Night !
+
+您本次参加的活动为：
+
+
+主题: <%= @activity.title %>
+主讲人: <%= @activity.author_name %>
+活动时间为： <%= l @activity.start_at, format: :short %> 。
+活动简介：
+
+<%= @activity.description %>
+
+希望您能在这里度过一段愉快的时光!
+
+感谢有你,
+
+Rails-Night 活动组
