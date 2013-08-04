@@ -4,13 +4,13 @@ class ActivityMailer < ActionMailer::Base
 
   def welcome_email activity, user
     @user = user
-    @activity = activity
+    @activity = activity.decorate
     mail(to: @user.email,
          subject: '欢迎参加 Rails-Night')
   end
 
   def upcoming_email activity
-    @activity = activity
+    @activity = activity.decorate
     mail(to: @activity.users.map(&:email), subject: 'Rails-Night 即将开始')
   end
 end

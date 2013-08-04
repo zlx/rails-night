@@ -57,8 +57,8 @@ class ActivitiesController < ApplicationController
 
   def join
     @activity.users << current_user
-    ActivityMailer.delay.welcome_email(@activity.decorate, current_user)
-    #ActivityMailer.upcoming_email(@activity.decorate).deliver
+    ActivityMailer.welcome_email(@activity, current_user).deliver
+    #ActivityMailer.upcoming_email(@activity).deliver
     redirect_to @activity, notice: "欢迎参加活动"
   end
 
