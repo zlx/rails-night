@@ -1,0 +1,17 @@
+<h4>用户评论</h4>
+<%- comments.each_with_index do |comment, index| %>
+<div class="comment clearfix">
+  <div class="face pull-left">
+    <%= image_tag(comment.author_avatar_url) %>
+  </div>
+  <div class="infos pull-left">
+    <div class="info"><%= index + 1 %>楼
+      <%= comment.author_nickname %>
+      <%= timeago_tag comment.created_at, nojs: true, lang: 'zh-CN', limit: 10.days.ago %>
+    </div>
+    <div class="content">
+      <%= markdown comment.subject %>
+    </div>
+  </div>
+</div>
+<% end -%>

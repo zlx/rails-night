@@ -1,6 +1,7 @@
 class Activity < ActiveRecord::Base
   has_and_belongs_to_many :users
   belongs_to :author, class_name: 'User'
+  has_many :comments, class_name: 'ActivityComment'
 
   validates :title, presence: true
   validates :start_at, presence: true, future_time: true

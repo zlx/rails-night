@@ -18,6 +18,8 @@
           <div class='well'><%= markdown @activity.summary %></div>
         </div>
       <% end -%>
+      <%= render 'activity_comments', comments: @activity.comments %>
+      <%= render 'create_new_comment' %>
       </div>
       <div class="sider-right span4">
         <div class="activity-info well">
@@ -44,7 +46,7 @@
 
           <%- @activity.users.each do |user| %>
             <div class='participant-box span3'>
-            <%= link_to image_tag(user.avatar_url), "http://colla.lanshizi.com/" %>
+            <%= link_to image_tag(user.avatar_url), "http://colla.lanshizi.com/", title: user.nickname %>
           </div>
         <% end -%>
         </div>
