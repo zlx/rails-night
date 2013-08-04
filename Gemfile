@@ -48,6 +48,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-ui-rails'
 gem 'draper'
 gem 'redcarpet'
+gem 'cancan'
+gem 'settingslogic'
 
 # Use unicorn as the app server
 # gem 'unicorn'

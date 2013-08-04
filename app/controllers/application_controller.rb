@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       flash[:error] = "亲，你需要先登录哦！"
-      redirect_to root_path
+      redirect_to login_in_path
     end
   end
 end

@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
     avatar_email = self[:avatar_url].blank? ? email : self[:avatar_url]
     @avatar_url ||= "http://gravatar.com/avatar/#{Digest::MD5::hexdigest(avatar_email).downcase}.png?s=100"
   end
+
+  def admin?
+    Settings.admin_emails.include? email.downcase
+  end
 end

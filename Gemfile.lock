@@ -39,6 +39,7 @@ GEM
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.1.4)
+    cancan (1.6.10)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -107,6 +108,7 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    settingslogic (2.0.9)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -137,6 +139,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
+  cancan
   coffee-rails (~> 4.0.0)
   draper
   jbuilder (~> 1.2)
@@ -148,6 +151,7 @@ DEPENDENCIES
   redcarpet
   sass-rails (~> 4.0.0)
   sdoc
+  settingslogic
   simple_form!
   sqlite3
   turbolinks

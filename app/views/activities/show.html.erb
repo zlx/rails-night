@@ -26,15 +26,17 @@
           <%- if current_user && @activity.has_joined?(current_user) %>
             <%= link_to "已经报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
         <%- elsif current_user && !@activity.can_join?(current_user) %>
-            <%= link_to "暂时还不能报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
+            <%= link_to "暂时不能报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
         <%- else %>
             <%= link_to "报名", join_activity_path(@activity), method: :post, class: 'btn btn-success btn-large btn-block' %>
         <% end -%>
         </div>
+        <%- if can? :manage, @activity %>
         <div class="activity-manage well center clearfix">
           <%= link_to t('common.edit'), [:edit, @activity], class: "btn btn-success btn-large btn-block" %>
           <%= link_to t('common.destroy'), @activity, method: :delete, class: "btn btn-danger btn-large btn-block" %>
         </div>
+      <% end -%>
         <div class="activity-participants well center clearfix">
           <h5>已报名会员</h5>
 
