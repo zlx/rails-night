@@ -3,11 +3,11 @@
 
 <div class="form-inputs">
   <%= f.input :title %>
-  <%= f.input :description, input_html: {class: 'span6'} %>
   <%= f.association :author, collection: User.all.map{|u| [u.nickname, u.id]} %>
+  <%= f.input :description, input_html: {class: 'span6', size: '500x10'}, hint: t('common.markdown') %>
   <%= f.input :status, collection: Activity::STATUS.map{|k, v| [v, k]} %>
   <%= f.input :start_at, as: :string %>
-  <%= f.input :summary, input_html: {class: 'span6'} %>
+  <%= f.input :summary, input_html: {class: 'span6', size: '500x10'}, hint: t('common.markdown') %>
 </div>
 
 <div class="form-actions">

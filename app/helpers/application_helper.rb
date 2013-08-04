@@ -23,4 +23,9 @@ module ApplicationHelper
   def h model, name
     model.to_s.camelize.constantize.human_attribute_name(name)
   end
+
+  def markdown content
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    @markdown.render(content).html_safe
+  end
 end

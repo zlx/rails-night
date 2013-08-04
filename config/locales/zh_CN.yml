@@ -4,4 +4,5 @@ zh_CN:
     edit: '编辑'
     destroy: '删除'
     new: '创建一个新的'
+    markdown: "你可以使用 <a href='http://wowubuntu.com/markdown/index.html'>markdown</a> 语法编辑"
 

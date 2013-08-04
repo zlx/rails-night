@@ -5,11 +5,11 @@
 <table class='table table-hover'>
   <thead>
     <tr>
+      <th><%= h :activity, :start_at %></th>
       <th><%= h :activity, :title %></th>
       <th><%= h :activity, :description %></th>
       <th><%= h :activity, :author_id %></th>
       <th><%= h :activity, :status %></th>
-      <th><%= h :activity, :start_at %></th>
       <th></th>
     </tr>
   </thead>
@@ -17,11 +17,10 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
+        <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
         <td><%= link_to activity.title, activity %></td>
-        <td><%= activity.description %></td>
         <td><%= activity.author_name %></td>
         <td><span class='label label-info'><%= activity.human_status %></span></td>
-        <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
         <td>
           <%= link_to t('common.edit'), edit_activity_path(activity) %>
           <%= link_to t('common.destroy'), activity, method: :delete, data: { confirm: 'Are you sure?' } %>

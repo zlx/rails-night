@@ -47,6 +47,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'bootstrap-datetimepicker-rails'
 gem 'jquery-ui-rails'
 gem 'draper'
+gem 'redcarpet'
 
 # Use unicorn as the app server
 # gem 'unicorn'

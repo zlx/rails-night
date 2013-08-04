@@ -7,14 +7,15 @@
     </div>
     <div class="activity-body">
       <div class="span8 activity-main">
+        <h4>主讲人: <%= @activity.author_name %></h4>
         <div class="description">
-          <h4>主讲人: <%= @activity.author_name %></h4>
-          <%= @activity.description.html_safe %>
+          <h4><%= h :activity, :description %></h4>
+          <div class='well'><%= markdown @activity.description %></div>
         </div>
         <%- if @activity.completed? %>
           <div class='summary'>
-          <h4>活动总结</h4>
-          <%= @activity.summary %>
+            <h4><%= h :activity, :summary %></h4>
+            <div class='well'><%= markdown @activity.summary %></div>
         </div>
       <% end -%>
       </div>
