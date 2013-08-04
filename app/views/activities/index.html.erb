@@ -1,17 +1,14 @@
-<h1>最新活动</h1>
+<h2>最新活动</h2>
 
-<hr>
+<hr/>
 
 <table class='table table-hover'>
   <thead>
     <tr>
-      <th>主题</th>
-      <th>主要内容</th>
-      <th>主讲人</th>
-      <th>状态</th>
-      <th>开始时间</th>
-      <th></th>
-      <th></th>
+      <th><%= h :activity, :start_at %></th>
+      <th><%= h :activity, :title %></th>
+      <th><%= h :activity, :author_id %></th>
+      <th><%= h :activity, :status %></th>
       <th></th>
     </tr>
   </thead>
@@ -19,13 +16,14 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
+        <td><span class='label label-warning'><%= l activity.start_at, format: :short %></span></td>
         <td><%= link_to activity.title, activity %></td>
-        <td><%= activity.description %></td>
-        <td><%= activity.author_nickname %></td>
+        <td><%= activity.author_name %></td>
         <td><span class='label label-info'><%= activity.human_status %></span></td>
-        <td><%= activity.start_at.to_s(:db) %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to t('common.edit'), edit_activity_path(activity) %>
+          <%= link_to t('common.destroy'), activity, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Activity', new_activity_path %>
+<%= link_to t('common.new'), new_activity_path, class: 'btn btn-success' %>

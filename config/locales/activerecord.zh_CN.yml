@@ -1,0 +1,14 @@
+zh_CN:
+  activerecord:
+    models:
+      activity: "活动"
+      user: '用户'
+    attributes:
+      activity:
+        title: '主题'
+        description: '简介'
+        author_id: '主讲人'
+        author: '主讲人'
+        status: '状态'
+        start_at: '活动时间'
+        summary: '总结'
