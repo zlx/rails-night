@@ -17,6 +17,9 @@ module RailsNight
     # config.time_zone = 'Beijing'
     config.autoload_paths += [Rails.root.join('app', 'models', 'validators').to_s]
 
+    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :zh_CN

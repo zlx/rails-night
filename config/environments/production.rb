@@ -80,10 +80,10 @@ RailsNight::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.exmail.qq.com",
-    :port                 => 25,
-    :user_name            => 'rails-night@zlxstar.me',
-    :password             => 'BQ7MO7uhLiG21',
-    :authentication       => :login,
-    :enable_starttls_auto => false
+    :port                 => 465,
+    :user_name            => 'zhu@zlxstar.me',
+    :password             => 'FJXiFNGEp0rb',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
   }
 end
