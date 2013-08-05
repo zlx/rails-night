@@ -79,11 +79,11 @@ RailsNight::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.exmail.qq.com",
-    :port                 => 465,
-    :user_name            => 'zhu@zlxstar.me',
-    :password             => 'FJXiFNGEp0rb',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true
+    address:              "smtp.gmail.com",
+    port:                 587,
+    user_name:            'railsnight@gmail.com',
+    password:             'Qj6DKT3UZBQu',
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
 end
