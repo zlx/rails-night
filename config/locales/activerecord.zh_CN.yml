@@ -9,7 +9,7 @@ zh_CN:
         description: '简介'
         author_id: '主讲人'
         author: '主讲人'
-        status: '状态'
+        status: '当前状态'
         start_at: '活动时间'
         summary: '总结'
       user:

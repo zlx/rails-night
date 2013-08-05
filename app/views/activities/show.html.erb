@@ -7,7 +7,7 @@
     </div>
     <div class="activity-body">
       <div class="span8 activity-main">
-        <h4>主讲人: <%= @activity.author_name %></h4>
+        <h4><%= h :activity, :author %>: <%= @activity.author_name %></h4>
         <div class="description">
           <h4><%= h :activity, :description %></h4>
           <div class='well'><%= markdown @activity.description %></div>
@@ -23,14 +23,14 @@
       </div>
       <div class="sider-right span4">
         <div class="activity-info well">
-          <h5>开始时间: <span class="alert-success"><%= @activity.start_at.to_s(:db) %></span></h5>
-          <h5>当前状态: <span class="alert-success"><%= @activity.human_status %></span></h5>
+          <h5><%= h :activity, :start_at %>: <span class="alert-success"><%=I18n.l @activity.start_at, format: :short %></span></h5>
+          <h5><%= h :activity, :status %>: <span class="alert-success"><%= @activity.human_status %></span></h5>
           <%- if current_user && @activity.has_joined?(current_user) %>
-            <%= link_to "已经报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
+            <%= link_to t("activity.has_joined"), "#", class: 'btn btn-success btn-large btn-block disabled' %>
         <%- elsif current_user && !@activity.can_join?(current_user) %>
-            <%= link_to "暂时不能报名", "#", class: 'btn btn-success btn-large btn-block disabled' %>
+            <%= link_to t("activity.cannot_join"), "#", class: 'btn btn-success btn-large btn-block disabled' %>
         <%- else %>
-            <%= link_to "报名", join_activity_path(@activity), method: :post, class: 'btn btn-success btn-large btn-block' %>
+            <%= link_to t("activity.join"), join_activity_path(@activity), method: :post, class: 'btn btn-success btn-large btn-block' %>
         <% end -%>
         </div>
         <%- if can? :manage, @activity %>
@@ -40,7 +40,7 @@
         </div>
       <% end -%>
         <div class="activity-participants well center clearfix">
-          <h5>已报名会员</h5>
+          <h5><%= t("activity.joined_users") %></h5>
 
           <hr>
 
