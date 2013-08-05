@@ -9,4 +9,9 @@ zh_CN:
     easyread: '简阅'
     footer:
       declaration: '专属于简阅技术宅的盛会'
+  activity:
+    has_joined: "已经报名"
+    cannoy_join: "现在不能报名哦"
+    join: "我要报名"
+    joined_users: "已报名用户"
 
