@@ -8,6 +8,7 @@ class Activity < ActiveRecord::Base
 
   scope :completed, -> { where(status: 2) }
   scope :uncompleted, -> { where("status != ?", 2) }
+  scope :ongoing, -> { where(status: 1) }
   
 
   STATUS = {
