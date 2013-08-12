@@ -42,6 +42,11 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+group :development do
+  gem 'guard'
+  gem 'factory_girl'
+end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'bootstrap-datetimepicker-rails'
