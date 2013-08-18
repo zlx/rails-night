@@ -6,6 +6,8 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
+  gem 'quiet_assets'
+  gem 'thin'
   gem 'sqlite3'
 end
 
@@ -52,11 +54,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'bootstrap-datetimepicker-rails'
 gem 'jquery-ui-rails'
 gem 'draper'
-gem 'redcarpet'
+gem "redcarpet", require: 'redcarpet/compat'
 gem 'cancan'
 gem 'settingslogic'
 gem 'delayed_job_active_record'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 gem 'rails-timeago'
 
 # Use unicorn as the app server
