@@ -1,0 +1,45 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "jquery.ui.datepicker";
+@import "jquery.ui.slider";
+@import "jquery-ui-timepicker-addon";
+@import "scaffolds";
+
+body {
+  padding-top: 60px;
+  position: relative;
+}
+
+.main {
+  min-height: 500px;
+}
+
+.participant-box {
+  margin-bottom: 5px;
+}
+
+.comment {
+  border-bottom: 1px solid #DDD;
+  padding: 8px 10px;
+  margin: 0 -10px;
+  background: #FFF;
+  .face img {
+    width: 48px;
+    height: 48px;
+  }
+  .infos {
+    padding-left: 10px;
+  }
+}
+
+.activity-body {
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 22.5px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}

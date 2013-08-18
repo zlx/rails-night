@@ -14,7 +14,7 @@
         </div>
         <%- if @activity.completed? %>
           <div class='summary'>
-          <h4><%= h :activity, :summary %></h4>
+          <h3><%= h :activity, :summary %></h3>
           <div class='well'><%= markdown @activity.summary %></div>
         </div>
       <% end -%>
