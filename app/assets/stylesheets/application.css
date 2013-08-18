@@ -27,3 +27,19 @@ body {
 .participant-box {
   margin-bottom: 5px;
 }
+
+.comment .face img {
+  width: 48px;
+  height: 48px;
+}
+
+.comment {
+  border-bottom: 1px solid #DDD;
+  padding: 8px 10px;
+  margin: 0 -10px;
+  background: #FFF;
+}
+
+.comment .infos {
+  padding-left: 10px;
+}
