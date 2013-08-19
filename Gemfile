@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.0'
 
+# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -23,6 +24,8 @@ group :production do
 end
 
 group :development, :test do
+  gem 'quiet_assets'
+  gem 'thin'
   gem 'sqlite3'
   gem 'guard'
   gem 'shoulda'
@@ -35,11 +38,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #gem 'bootstrap-datetimepicker-rails'
 gem 'jquery-ui-rails'
 gem 'draper'
-gem 'redcarpet'
+gem "redcarpet", require: 'redcarpet/compat'
 gem 'cancan'
 gem 'settingslogic'
 gem 'delayed_job_active_record'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 gem 'rails-timeago'
 
 # Use unicorn as the app server
