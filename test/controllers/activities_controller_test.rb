@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ActivitiesControllerTest < ActionController::TestCase
-  let(:activity){ create(:activity, author: create(:user)) }
+  let(:activity) { create(:activity, author: create(:user)) }
   setup do
     activity
   end
@@ -9,12 +9,22 @@ class ActivitiesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_equal [activity.decorate], assigns(:activities)
+    assert_equal 1, assigns(:activities).size
   end
 
-  test "should get new" do
-    get :new
+  test "should get past" do
+    activity_past = create(:activity, status: 2)
+    get :index
     assert_response :success
+    assert_equal 1, assigns(:activities).size
+  end
+
+  test "should join activity" do
+    login
+    post :join, id: activity
+
+    assert_equal [user], assigns(:activity).users
+    assert_redirected_to activity_path(assigns(:activity))
   end
 
   test "should create activity" do
