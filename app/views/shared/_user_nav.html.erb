@@ -1,9 +1,9 @@
-<ul class='nav pills pull-right'>
+<ul class='nav navbar-nav navbar-right'>
   <%- if current_user %>
     <li class='dropdown'>
   <%= link_to current_user, class: 'dropdown-toggle', data: {toggle: 'dropdown'} do %>
     <%= current_user.nickname %>
-  <span class='caret'></span>
+  <b class='caret'></b>
 
   <ul class='dropdown-menu'>
     <li><%= link_to '用户中心', '#', data: {confirm: '我还没有想好显示什么，有什么想法请告诉我！'} %></li>

@@ -1,8 +1,10 @@
 <div class="create_comment ">
   <h4>发表评论</h4>
-  <%= form_for @activity_comment, class: 'new_comment' do |f| %>
+  <%= form_for @activity_comment, html: {class: 'form-inline'} do |f| %>
     <%= f.hidden_field :activity_id %>
-    <%= f.text_area :subject, class: 'span10', rows: '4' %>
+    <div class='form-group'>
+    <%= f.text_area :subject, class: 'form-control', rows: '4', cols: '100' %>
+</div>
     <%= f.submit '提交评论', class: 'btn btn-primary' %>
   <% end -%>
 </div>
