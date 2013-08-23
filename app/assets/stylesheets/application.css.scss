@@ -4,6 +4,12 @@
 @import "jquery.ui.slider";
 @import "jquery-ui-timepicker-addon";
 @import "scaffolds";
+@import "nprogress";
+
+#nprogress .bar,
+#nprogress .spinner {
+  z-index: 999999;
+}
 
 body {
   padding-top: 60px;
