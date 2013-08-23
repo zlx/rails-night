@@ -3,12 +3,10 @@ class ActivitiesController < ApplicationController
   before_action :require_login, only: [:join]
 
   def index
-    sleep 2
     @activities = Activity.uncompleted.order(status: :desc).decorate
   end
 
   def past
-    sleep 2
     @activities = Activity.completed.decorate
   end
 

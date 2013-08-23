@@ -4,7 +4,7 @@
 #= require jquery-ui-timepicker-addon
 #= require jquery-ui-timepicker-zh-CN
 #= require jquery_ujs
-#= require bootstrap
+#= require bootstrap.min
 #= require rails-timeago
 #= require rails-timeago-all
 #= require nprogress

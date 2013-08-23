@@ -5,16 +5,18 @@
 <%= simple_form_for @user, html:{ class: 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :email %>
-  <%= f.input :nickname %>
-  <%= f.input :avatar_url, hint: t('common.avatar_url') %>
+  <%= f.input :email, input_html: {class: 'form-control'} %>
+  <%= f.input :nickname, input_html: {class: 'form-control'} %>
+  <%= f.input :avatar_url, hint: t('common.avatar_url'), input_html: {class: 'form-control'} %>
 
 
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.input :current_password, required: true, hint: '你必须输入原密码来确认修改' %>
+  <%= f.input :password , input_html: {class: 'form-control'}%>
+  <%= f.input :password_confirmation, input_html: {class: 'form-control'} %>
+  <%= f.input :current_password, required: true, hint: '你必须输入原密码来确认修改', input_html: {class: 'form-control'} %>
 
-  <div class='form-actions'>
-    <%= f.button :submit %>
+  <div class='form-group'>
+    <div class='col-lg-offset-2 col-lg-2'>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
