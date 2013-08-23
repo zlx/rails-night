@@ -11,7 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass' # update to bootstrap 3
 gem 'simple_form', github: 'plataformatec/simple_form'
 
 group :doc do

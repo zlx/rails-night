@@ -1,15 +1,16 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
     <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Rails-Night", root_path, class: 'brand' %>
-      <div class="nav-collapse collapse">
+      <%= link_to "Rails-Night", root_path, class: 'navbar-brand' %>
+</div>
+      <div class="collapse navbar-collapse">
         <%= render 'shared/user_nav' %>
-        <ul class="nav">
+        <ul class="nav navbar-nav">
           <li><%= link_to "最新活动", activities_path %></li>
           <li><%= link_to "往期活动", past_activities_path %></li>
           <%- if can? :manage, Activity %>
@@ -19,5 +20,4 @@
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  </div>
 </div>

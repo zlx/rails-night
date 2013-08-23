@@ -3,10 +3,12 @@
 <hr/>
 
 <%= simple_form_for @user, url: sessions_path, html: { class: 'form-horizontal' } do |f| %>
-  <%= f.input :email, hint: '仅接受 @easyread.ly 邮箱登录' %>
-  <%= f.input :password %>
+  <%= f.input :email, hint: '仅接受 @easyread.ly 邮箱登录', input_html: {class: 'form-control'} %>
+  <%= f.input :password, input_html: {class: 'form-control'} %>
 
-  <div class='form-actions'>
-    <%= f.submit '登录', class: 'btn btn-primary' %>
+  <div class='form-group'>
+    <div class='col-lg-offset-2 col-lg-2'>
+      <%= f.submit '登录', class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
