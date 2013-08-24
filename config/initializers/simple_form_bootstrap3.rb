@@ -1,10 +1,10 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
-  config.wrappers :bootstrap, tag: 'div', class: 'form-group', error_class: 'error' do |b|
+  config.wrappers :bootstrap3, tag: 'div', class: 'form-group', error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label
-    b.wrapper tag: 'div', class: 'col-lg-6' do |ba|
+    b.wrapper :controls, tag: 'div', class: 'col-lg-6' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'help-inline' }
       ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
@@ -41,5 +41,8 @@ SimpleForm.setup do |config|
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
   # to learn about the different styles for forms and inputs,
   # buttons and other elements.
-  config.default_wrapper = :bootstrap
+  config.default_wrapper = :bootstrap3
+  config.button_class = 'btn btn-default'
+  config.error_notification_class = 'alert alert-danger'
+  config.label_class = 'col-lg-2 control-label'
 end

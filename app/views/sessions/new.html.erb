@@ -3,8 +3,8 @@
 <hr/>
 
 <%= simple_form_for @user, url: sessions_path, html: { class: 'form-horizontal' } do |f| %>
-  <%= f.input :email, hint: '仅接受 @easyread.ly 邮箱登录', input_html: {class: 'form-control'} %>
-  <%= f.input :password, input_html: {class: 'form-control'} %>
+  <%= f.input :email, hint: '仅接受 @easyread.ly 邮箱登录', controls_html: {class: 'col-md-4'} %>
+  <%= f.input :password, controls_html: {class: 'col-md-4'} %>
 
   <div class='form-group'>
     <div class='col-lg-offset-2 col-lg-2'>

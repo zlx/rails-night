@@ -2,12 +2,12 @@
   <%= f.error_notification %>
 
 <div> 
-  <%= f.input :title, input_html: {class: 'form-control'} %>
-  <%= f.association :author, collection: User.all.map{|u| [u.nickname, u.id]} , input_html: {class: 'form-control'}%>
-  <%= f.input :description, input_html: {class: 'span6 form-control', size: '500x10'}, hint: t('common.markdown') %>
-  <%= f.input :status, collection: Activity::STATUS.map{|k, v| [v, k]}, input_html: {class: 'form-control'} %>
-  <%= f.input :start_at, as: :string, input_html: { value: @activity.start_at } , input_html: {class: 'form-control'}%>
-  <%= f.input :summary, input_html: {class: 'span6', size: '500x10'}, hint: t('common.markdown'), input_html: {class: 'form-control'} %>
+  <%= f.input :title %>
+  <%= f.association :author, collection: User.all.map{|u| [u.nickname, u.id]}, controls_html: {class: 'col-md-2'} %>
+  <%= f.input :description, input_html: {class: 'col-md-6', size: '500x10'}, hint: t('common.markdown') %>
+  <%= f.input :status, collection: Activity::STATUS.map{|k, v| [v, k]}, controls_html: {class: 'col-md-2'} %>
+  <%= f.input :start_at, as: :string, input_html: { value: @activity.start_at }, controls_html: {class: 'col-md-2'}%>
+  <%= f.input :summary, input_html: {class: 'span6', size: '500x10'}, hint: t('common.markdown') %>
 </div>
 
 <div class="form-groups">
