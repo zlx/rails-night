@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/zlx/simple_form.git
-  revision: 1d5ad73b6651a3ede5f70aa3a67b239623eede20
+  revision: fd1424b95658fe99470d36b793eaaa4b91220131
   branch: feature/integration_bootstrap3
   specs:
     simple_form (3.0.0.rc)

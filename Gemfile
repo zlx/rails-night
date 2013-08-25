@@ -12,7 +12,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'bootstrap-sass' # update to bootstrap 3
-gem 'simple_form', github: 'zlx/simple_form', branch: 'feature/integration_bootstrap3'
+gem 'simple_form', 
+  github: 'zlx/simple_form', branch: 'feature/integration_bootstrap3'
+  #path: '../simple_form'
 
 group :doc do
   gem 'sdoc', require: false
